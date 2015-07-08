@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+  
+  <object name="shakeHandsCase" type="TSPTest.TestCase.ShakeHandsCase, TSPTest">
+  </object>
+
+  <object name="startTestCase" type="TSPTest.TestCase.StartTestCase, TSPTest">
+  </object>
+
+  <object name="stopTestCase" type="TSPTest.TestCase.StopTestCase, TSPTest">
+  </object>
+  
+</objects>

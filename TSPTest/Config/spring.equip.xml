@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+  <object name="testedRacks" type="TSPTest.Model.TestedRacks, TSPTest">
+    <property name="Tester" value=""/>
+    <property name="txMsgQueue" ref="txMsgQueue"/>
+    <property name="rxMsgQueue" ref="rxMsgQueue"/>
+    <property name="shakeHandsCase" ref="shakeHandsCase"/>
+    <property name="startTestCase" ref="startTestCase"/>
+    <property name="stopTestCase" ref="stopTestCase"/>
+    <property name="preTimeout" value="10"/>
+    <property name="runTimeout" value="30"/>
+    <property name="EqIDLength" value="5"/>
+    <property name="errorCodeMsgFile" ref="errorCodeMsgFile"/>
+    <property name="Racks" >
+      <list element-type="TSPTest.Model.Rack, TSPTest" >
+        <ref object="Rack1"/>
+        <ref object="Rack2"/>
+      </list>
+    </property>
+  </object>
+
+  <object name="Rack1" type="TSPTest.Model.Rack, TSPTest">
+    <property name="No" value="1"/>
+    <property name="EqId" value="0x7,0x1,0xff,0xff,0xff"/>
+    <property name="Name" value="部件功能测试"/>
+    <property name="subType" value="0x06"/>
+    <property name="IsTested" value="true"/>
+    <property name="SN" value=""/>
+    <property name="Boards">
+      <list element-type="TSPTest.Model.Board, TSPTest">
+        <ref object="STBY"/>
+        <ref object="MPU1_A"/>
+        <ref object="MPU2_A"/>
+        <ref object="MCU1_A"/>
+        <ref object="MCU2_A"/>
+        <ref object="MPU1_B"/>
+        <ref object="MPU2_B"/>
+        <ref object="MCU1_B"/>
+        <ref object="MCU2_B"/>
+        <ref object="GGW_A"/>
+        <ref object="GGW_B"/>
+        <ref object="SDMS"/>
+      </list>
+    </property>
+  </object>
+
+  <object name="Rack2" type="TSPTest.Model.Rack, TSPTest">
+    <property name="No" value="2"/>
+    <property name="EqId" value="0x7,0x2,0xff,0xff,0xff"/>
+    <property name="Name" value="系统仿真测试"/>
+    <property name="subType" value="0x07"/>
+    <property name="IsTested" value="false"/>
+    <property name="SN" value=""/>
+    <property name="Boards">
+      <list element-type="TSPTest.Model.Board, TSPTest">
+        <ref object="STBY"/>
+        <ref object="MPU1_A"/>
+        <ref object="MPU2_A"/>
+        <ref object="MCU1_A"/>
+        <ref object="MCU2_A"/>
+        <ref object="MPU1_B"/>
+        <ref object="MPU2_B"/>
+        <ref object="MCU1_B"/>
+        <ref object="MCU2_B"/>
+        <ref object="GGW_A"/>
+        <ref object="GGW_B"/>
+        <ref object="SDMS"/>
+      </list>
+    </property>
+  </object>
+
+  <object name="STBY" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="0"/>
+    <property name="EqId" value="0x7,0x1,0x2,0xff,0xff"/>
+    <property name="Name" value="STBY"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value=""/>
+  </object>
+  
+  <object name="MPU1_A" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="1"/>
+    <property name="EqId" value="0x7,0x1,0x3,0xff,0xff"/>
+    <property name="Name" value="MPU1_A"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.11:40001"/>
+  </object>
+
+  <object name="MPU2_A" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="2"/>
+    <property name="EqId" value="0x7,0x1,0x4,0xff,0xff"/>
+    <property name="Name" value="MPU2_A"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.12:40001"/>
+  </object>
+
+  <object name="MCU1_A" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="3"/>
+    <property name="EqId" value="0x7,0x1,0x5,0xff,0xff"/>
+    <property name="Name" value="MCU1_A"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.13:40001"/>
+  </object>
+
+  <object name="MCU2_A" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="4"/>
+    <property name="EqId" value="0x7,0x1,0x6,0xff,0xff"/>
+    <property name="Name" value="MCU2_A"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.14:40001"/>
+  </object>
+
+  <object name="MPU1_B" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="5"/>
+    <property name="EqId" value="0x7,0x1,0x7,0xff,0xff"/>
+    <property name="Name" value="MPU1_B"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.21:40001"/>
+  </object>
+
+  <object name="MPU2_B" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="6"/>
+    <property name="EqId" value="0x7,0x1,0x8,0xff,0xff"/>
+    <property name="Name" value="MPU2_B"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.22:40001"/>
+  </object>
+
+  <object name="MCU1_B" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="7"/>
+    <property name="EqId" value="0x7,0x1,0x9,0xff,0xff"/>
+    <property name="Name" value="MCU1_B"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.23:40001"/>
+  </object>
+
+  <object name="MCU2_B" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="8"/>
+    <property name="EqId" value="0x7,0x1,0xA,0xff,0xff"/>
+    <property name="Name" value="MCU2_B"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.24:40001"/>
+  </object>
+
+  <object name="GGW_A" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="9"/>
+    <property name="EqId" value="0x7,0x1,0xb,0xff,0xff"/>
+    <property name="Name" value="GGW_A"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.3:40001"/>
+  </object>
+
+  <object name="GGW_B" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="10"/>
+    <property name="EqId" value="0x7,0x1,0xc,0xff,0xff"/>
+    <property name="Name" value="GGW_B"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.4:40001"/>
+  </object>
+
+  <object name="SDMS" type="TSPTest.Model.Board, TSPTest">
+    <property name="No" value="11"/>
+    <property name="EqId" value="0x7,0x1,0xd,0xff,0xff"/>
+    <property name="Name" value="SDMS"/>
+    <property name="IsTested" value="true"/>
+    <property name="IsPassed" value="true"/>
+    <property name="IPAndPort" value="192.100.69.101:40001"/>
+  </object>
+
+</objects>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+
+  <object name="frameProtocol" type="TSPTest.Protocol.FrameProtocol, TSPTest">
+    <property name="AppMarkHead" value="0x5A"/>
+    <property name="AppMarkTail" value="0xA5"/>
+  </object>
+
+  <object name="protocolFactory" type="TSPTest.Protocol.ProtocolFactory, TSPTest">
+    <property name="rxQueue" ref="rxQueue"/>
+    <property name="txQueue" ref="txQueue"/>
+    <property name="rxMsgQueue" ref="rxMsgQueue"/>
+    <property name="txMsgQueue" ref="txMsgQueue"/>
+    <property name="frameProtocol" ref="frameProtocol"/>
+    <property name="decoders">
+      <dictionary>
+        <entry key="0x01" value-ref="shakeHandMsg" />
+        <entry key="0xB1" value-ref="heartMsg" />
+        <entry key="0xB6" value-ref="stopTestMsg" />
+        <entry key="0xB4" value-ref="errorCodeMsg" />
+        <entry key="0xEE" value-ref="heartTimeoutMsg" />
+        <entry key="0xFF" value-ref="idleMsg" />
+      </dictionary>
+    </property>
+  </object>
+
+  <object name="shakeHandMsg" type="TSPTest.Protocol.ShakeHandMsg, TSPTest">
+  </object>
+
+  <object name="startTestMsg" type="TSPTest.Protocol.StartTestMsg, TSPTest">
+  </object>
+
+  <object name="cmd2StopMsg" type="TSPTest.Protocol.Cmd2StopMsg, TSPTest">
+  </object>
+
+  <object name="stopTestMsg" type="TSPTest.Protocol.StopTestMsg, TSPTest">
+  </object>
+
+  <object name="errorCodeMsg" type="TSPTest.Protocol.ErrorCodeMsg, TSPTest">
+  </object>
+
+  <object name="heartTimeoutMsg" type="TSPTest.Protocol.HeartTimeoutMsg, TSPTest">
+  </object>
+  
+  <object name="heartMsg" type="TSPTest.Protocol.HeartMsg, TSPTest">
+  </object>
+  
+  <object name="idleMsg" type="TSPTest.Protocol.IdleMsg, TSPTest">
+  </object>
+  
+  <object name="rxQueue" type="TSPTest.Common.RxQueue, TSPTest">
+  </object>
+
+  <object name="txQueue" type="TSPTest.Common.TxQueue, TSPTest">
+  </object>
+
+  <object name="rxMsgQueue" type="TSPTest.Common.RxMsgQueue, TSPTest">
+  </object>
+
+  <object name="txMsgQueue" type="TSPTest.Common.TxMsgQueue, TSPTest">
+  </object>
+  
+</objects>

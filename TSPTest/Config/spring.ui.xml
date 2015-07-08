@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+  
+  <object name="formMain" type="TSPTest.UI.FormMain, TSPTest">
+    <property name="formTestConfig" ref="formTestConfig"/>
+    <property name="formAbout" ref="formAbout"/>
+    <property name="testedRacks" ref="testedRacks"/>
+    <property name="udp" ref="udp"/>
+    <property name="rxMsgQueue" ref="rxMsgQueue"/>
+    <property name="dataGridViewRowSorter" ref="dataGridViewRowSorter"/>
+    <property name="report" ref="report"/>
+  </object>
+  
+  <object name="formTestConfig" type="TSPTest.UI.FormTestConfig, TSPTest">
+    <property name="testedRacks" ref="testedRacks"/>
+  </object>
+
+  <object name="formAbout" type="TSPTest.UI.FormAbout, TSPTest">
+    <property name="version" ref="version" />
+  </object>
+</objects>

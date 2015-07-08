@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+  <object name="udp" type="TSPTest.Net.Udp, TSPTest">
+    <property name="port" value="40001"/>
+    <property name="rxQueue" ref="rxQueue"/>
+    <property name="txQueue" ref="txQueue"/>
+    <property name="testedRacks" ref="testedRacks"/>
+    <property name="udpNetServer" ref="udpNetServer"/>
+    <property name="frameProtocol" ref="frameProtocol"/>
+  </object>
+
+  <object id="udpNetServer" type="Summer.System.NET.UdpNetServer,Summer.System">
+    <constructor-arg value="40001"/>
+  </object>
+</objects>

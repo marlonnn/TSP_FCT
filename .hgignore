@@ -1,0 +1,9 @@
+syntax: glob
+TSPTest/bin/Debug/TSPTest.exe.config
+TSPTest/bin/Debug/TSPTest.vshost.exe
+TSPTest/bin/Debug/TSPTest.vshost.exe.config
+TSPTest/bin/Debug/TSPTest.vshost.exe.manifest
+TSPTest/obj/x86/Debug/DesignTimeResolveAssemblyReferences.cache
+TSPTest/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+TSPTest/obj/x86/Debug/TSPTest.csproj.FileListAbsolute.txt
+TSPTest/obj/x86/Debug/TempPE/Properties.Resources.Designer.cs.dll

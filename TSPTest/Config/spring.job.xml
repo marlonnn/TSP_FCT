@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+  <!--<object id="fileFlushJob" type="Spring.Scheduling.Quartz.MethodInvokingJobDetailFactoryObject, Spring.Scheduling.Quartz20">
+    <property name="TargetObject" ref="errorCodeMsgFile" />
+    <property name="TargetMethod" value="Flush" />
+  </object>
+
+  <object id="fileFlushTrigger" type="Spring.Scheduling.Quartz.SimpleTriggerObject, Spring.Scheduling.Quartz20">
+    <property name="JobDetail" ref="fileFlushJob" />
+    <property name="StartDelay" value="5s" />
+    <property name="RepeatInterval" value="1s" />
+  </object>-->
+
+  <object id="byte2MsgJob" type="Spring.Scheduling.Quartz.MethodInvokingJobDetailFactoryObject, Spring.Scheduling.Quartz20">
+    <property name="TargetObject" ref="protocolFactory" />
+    <property name="TargetMethod" value="ExecuteDecoderInternal" />
+  </object>
+
+  <object id="byte2MsgTrigger" type="Spring.Scheduling.Quartz.SimpleTriggerObject, Spring.Scheduling.Quartz20">
+    <property name="JobDetail" ref="byte2MsgJob" />
+    <property name="StartDelay" value="1s" />
+    <property name="RepeatInterval" value="1s" />
+  </object>
+
+  <object id="msg2ByteJob" type="Spring.Scheduling.Quartz.MethodInvokingJobDetailFactoryObject, Spring.Scheduling.Quartz20">
+    <property name="TargetObject" ref="protocolFactory" />
+    <property name="TargetMethod" value="ExecuteEncoderInternal" />
+  </object>
+
+  <object id="msg2ByteTrigger" type="Spring.Scheduling.Quartz.SimpleTriggerObject, Spring.Scheduling.Quartz20">
+    <property name="JobDetail" ref="msg2ByteJob" />
+    <property name="StartDelay" value="1s" />
+    <property name="RepeatInterval" value="1s" />
+  </object>
+
+  <!--<object id="CronTrigger" type="Spring.Scheduling.Quartz.CronTriggerObject, Spring.Scheduling.Quartz20">
+    <property name="JobDetail" ref="ExampleJob" />
+    <property name="CronExpressionString" value="1 * * * * ?" />
+  </object>-->
+
+  <object id="scheduler" type="Spring.Scheduling.Quartz.SchedulerFactoryObject, Spring.Scheduling.Quartz20">
+    <property name="triggers">
+      <list>
+        <ref object="byte2MsgTrigger" />
+        <ref object="msg2ByteTrigger" />
+        <!--<ref object="snmpByte2QueueTrigger" />-->
+        <!--<ref object="fileFlushTrigger" />-->
+      </list>
+    </property>
+  </object>
+</objects>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--复制此文档各种Ioc定义方式到需要的地方-->
+<objects xmlns="http://www.springframework.net">
+
+  <object name="errorCodeMsgFile" type="TSPTest.Model.ErrorCodeMsgFile, TSPTest">
+  </object>
+
+  <object name="dataGridViewRowSorter" type="TSPTest.Model.DataGridViewRowSorter, TSPTest">
+  </object>
+
+  <object name="report" type="TSPTest.Model.Report, TSPTest">
+    <property name="testedRacks" ref="testedRacks"/>
+    <property name="version" ref="version"/>
+    <property name="templetFile" value="/Templet/main.pdf"/>
+    <property name="endString" value="-END-"/>
+    <property name="reportTitle" value="TSP硬件测试平台测试报告"/>
+    <property name="fontFile" value="C:/WINDOWS/Fonts/SimHei.TTF"/>
+    <property name="fontSizeHead" value="6"/>
+    <property name="fontSizeBody" value="11"/>
+  </object>
+
+  <object name="version" type="TSPTest.Common.Version, TSPTest">
+    <property name="Ver" value="V1.1.0"/>
+    <property name="Build" value="20150530"/>
+  </object>
+</objects>
